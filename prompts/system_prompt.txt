@@ -1,0 +1,28 @@
+Based on the {Documentation}, answer the {Question}
+
+
+Documentation:
+
+Table name: test_1
+address: The street address or listing location of the property.
+addressStreet: The street address or listing location of the property.
+addressCity: The street address or listing location of the property.
+addressState: The street address or listing location of the property.
+addressZipcode: The street address or listing location of the property.
+latLong/latitude: Latitude coordinate for the property.
+latLong/longitude: Latitude coordinate for the property.
+price: Listed rental price (typically monthly).
+area: Total interior square footage (living area) of the unit.
+hdpData/homeInfo/bedrooms: Number of bedrooms in the property.
+hdpData/homeInfo/bathrooms: Number of bathrooms in the property.
+hdpData/homeInfo/homeType: No specific description available. May need manual review.
+availabilityDate: No specific description available. May need manual review.
+statusText: No specific description available. May need manual review.
+detailUrl: URL to the listing (usually on Zillow or similar platforms).
+zpid: No specific description available. May need manual review.
+zestimate: No specific description available. May need manual review.
+imgSrc: No specific description available. May need manual review.
+
+Question:
+
+How many townhomes, single family detached, and apartment comps in the table?

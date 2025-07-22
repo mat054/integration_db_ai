@@ -1,1 +1,6 @@
 .env
+__pycache__/
+chains/__pycache__/
+config/__pycache__/
+sql_engine/__pycache__/
+utils/__pycache__/

@@ -1,6 +1,7 @@
-from langchain.chains import SQLDatabaseChain
-from langchain.chat_models import ChatOpenAI
-from langchain.sql_database import SQLDatabase
+from langchain_community.utilities.sql_database import SQLDatabase
+from langchain_community.agent_toolkits import SQLDatabaseToolkit
+from langchain_community.agent_toolkits.sql.base import create_sql_agent
+from langchain_community.chat_models import ChatOpenAI
 from config.settings import OPENAI_API_KEY, DB_URI
 
 def criar_chain():
@@ -13,15 +14,18 @@ def criar_chain():
         openai_api_key=OPENAI_API_KEY
     )
 
-    # Cria a "cadeia inteligente" que conecta a LLM ao banco
-    chain = SQLDatabaseChain.from_llm(
+    # Cria o toolkit SQL
+    toolkit = SQLDatabaseToolkit(db=db, llm=llm)
+
+    # Cria o agente SQL que substitui o SQLDatabaseChain
+    agent = create_sql_agent(
         llm=llm,
-        db=db,
+        toolkit=toolkit,
         verbose=True,
         return_intermediate_steps=True
     )
 
-    return chain
+    return agent
 
 
 # chain = criar_chain()
